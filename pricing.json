@@ -1,0 +1,21 @@
+{
+  "region": "ap-south-1 (Mumbai) unless noted",
+  "looked_up": "2026-10-26",
+  "sources": {
+    "ec2_on_demand_and_spot": "doit.com Spot/On-Demand tables for ap-south-1 (third-party aggregator, spot is a snapshot) - VERIFY against AWS Pricing Calculator",
+    "t3_baseline_pct": "AWS News Blog, 'New T3 Instances' (aws.amazon.com/blogs/aws/new-t3-instances-burstable-cost-effective-performance)",
+    "lambda": "AWS Lambda pricing page (aws.amazon.com/lambda/pricing/): $0.20/1M requests, $0.0000166667/GB-s x86 base tier; regional rates can differ - VERIFY for ap-south-1",
+    "s3_inr": "precisiontech.in AWS Mumbai guide (AWS partner, 'indicative' INR/GB-month) - VERIFY against AWS S3 pricing page"
+  },
+  "ec2_on_demand_usd_per_hour": {"t3.micro": 0.0112, "t3.small": 0.0224, "t3.medium": 0.0448, "t3.large": 0.0896, "t3.xlarge": 0.1792},
+  "ec2_spot_usd_per_hour_snapshot": {"t3.micro": 0.0035, "t3.small": 0.0080, "t3.medium": 0.0161, "t3.large": 0.0315, "t3.xlarge": 0.0569},
+  "instance_specs": {
+    "t3.micro":  {"vcpu": 2, "mem_gib": 1,  "baseline_pct_per_vcpu": 10},
+    "t3.small":  {"vcpu": 2, "mem_gib": 2,  "baseline_pct_per_vcpu": 20},
+    "t3.medium": {"vcpu": 2, "mem_gib": 4,  "baseline_pct_per_vcpu": 20},
+    "t3.large":  {"vcpu": 2, "mem_gib": 8,  "baseline_pct_per_vcpu": 30},
+    "t3.xlarge": {"vcpu": 4, "mem_gib": 16, "baseline_pct_per_vcpu": 40}
+  },
+  "lambda": {"usd_per_million_requests": 0.20, "usd_per_gb_second": 0.0000166667},
+  "s3_inr_per_gb_month": {"standard": 2.10, "standard_ia": 1.15, "glacier_flexible": 0.36}
+}
